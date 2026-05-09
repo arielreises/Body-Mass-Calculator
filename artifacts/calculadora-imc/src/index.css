@@ -1,0 +1,249 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.pagina {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.cartao {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 460px;
+}
+
+.titulo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.subtitulo {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.campo input {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.campo input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  background: #fff;
+}
+
+.campo input::placeholder {
+  color: #94a3b8;
+}
+
+.erro {
+  color: #ef4444;
+  font-size: 0.875rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+}
+
+.botoes {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.btn-calcular {
+  flex: 1;
+  padding: 0.8rem;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-calcular:hover  { background: #4f46e5; }
+.btn-calcular:active { transform: scale(0.98); }
+
+.btn-limpar {
+  padding: 0.8rem 1.2rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-limpar:hover { background: #e2e8f0; }
+
+/* Resultado */
+.resultado {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.imc-valor {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.imc-label {
+  margin-bottom: 1.25rem;
+}
+
+.badge {
+  display: inline-block;
+  color: #fff;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.barra-container {
+  margin-top: 0.5rem;
+}
+
+.barra-track {
+  position: relative;
+  height: 10px;
+  background: linear-gradient(to right, #3b82f6 0%, #22c55e 25%, #f59e0b 50%, #ef4444 75%, #991b1b 100%);
+  border-radius: 999px;
+  overflow: visible;
+}
+
+.barra-fill {
+  display: none;
+}
+
+.barra-indicador {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 3px solid #1e293b;
+  border-radius: 50%;
+  transition: left 0.4s ease;
+  z-index: 1;
+}
+
+.barra-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+/* Tabela */
+.tabela {
+  margin-top: 2rem;
+}
+
+.tabela h2 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+}
+
+.tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tabela th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.tabela td {
+  padding: 0.55rem 0.75rem;
+  color: #374151;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.tabela tr:last-child td { border-bottom: none; }
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
